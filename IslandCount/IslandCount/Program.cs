@@ -1,2 +1,13 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿int[][] gridInput = new int[][]
+{
+    new int[] { 0,0,0,1,1 },
+    new int[] { 0,0,0,1,1 },
+    new int[] { 0,0,0,0,1 },
+    new int[] { 0,0,0,0,0 }
+};
+
+
+foreach (int row in gridInput[0])
+{
+    Console.WriteLine(row);
+}
