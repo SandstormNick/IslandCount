@@ -94,6 +94,15 @@ namespace IslandCountTests
             Assert.Equal(6, IslandHelper.IslandFinder(mapJaggedPyramid));
         }
 
+
+        [Fact]
+        public void MapJaggedPyramid_IslandFinder_4Islands_ChatGPT()
+        {
+            //using the ChatGBT generated method
+            //Testing for Jagged Maps
+            Assert.Equal(6, IslandHelper.CountIslands(mapJaggedPyramid));
+        }
+
         #region TestInput
         static readonly int[][] map1 = new int[][]
         {

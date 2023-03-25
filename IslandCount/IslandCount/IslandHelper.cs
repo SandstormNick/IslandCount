@@ -77,5 +77,55 @@ namespace IslandCount
             }
             return islandCount;
         }
+
+        //ChatGBT's version of handling the problem
+        //1. The HashSet class keeps track of visited cells.
+        //2. The Dfs function is declared as an inner function
+        //3. It makes use of recursion to set the visited value in the HashSet
+
+        //THE EXPECTED OUTCOME DOES NOT WORK THOUGH
+        //It might be that it did not understand the question correctly.
+        //WIth some guidance it might have eventually got there.
+        public static int CountIslands(int[][] grid)
+        {
+            int numRows = grid.Length;
+            int numCols = grid[0].Length;
+            HashSet<(int, int)> visited = new HashSet<(int, int)>();
+            int numIslands = 0;
+
+            void Dfs(int row, int col)
+            {
+                if (row < 0 || row >= numRows || col < 0 || col >= numCols)
+                {
+                    return;
+                }
+                if (visited.Contains((row, col)))
+                {
+                    return;
+                }
+                if (grid[row][col] == 0)
+                {
+                    return;
+                }
+                visited.Add((row, col));
+                Dfs(row + 1, col);
+                Dfs(row - 1, col);
+                Dfs(row, col + 1);
+                Dfs(row, col - 1);
+            }
+
+            for (int row = 0; row < numRows; row++)
+            {
+                for (int col = 0; col < numCols; col++)
+                {
+                    if (grid[row][col] == 1 && !visited.Contains((row, col)))
+                    {
+                        numIslands++;
+                        Dfs(row, col);
+                    }
+                }
+            }
+            return numIslands;
+        }
     }
 }
