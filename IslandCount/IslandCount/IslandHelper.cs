@@ -43,13 +43,10 @@ namespace IslandCount
                     //Don't need to check left + ignore the top row (it has been handled)
                     if (isEdge && inner == 0 && outer != 0)
                     {
-                        if (gridInput[outer][inner] == 1)
+                        //check previous co-ord above
+                        if (gridInput[outer][inner] == 1 && gridInput[outer - 1][inner] != 1)
                         {
-                            //check previous co-ord above
-                            if (gridInput[outer - 1][inner] != 1)
-                            {
-                                islandCount++;
-                            }
+                            islandCount++;
                         }
                     }
 
