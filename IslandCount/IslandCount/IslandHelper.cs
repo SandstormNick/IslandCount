@@ -50,34 +50,27 @@ namespace IslandCount
                         }
                     }
 
-                    //All the other co-ordinates
-                    if (!isEdge)
-                    {
-                        //Check row length above to cater for jagged arrays
-                        if (inner < gridInput[outer - 1].Length)
-                        {
-                            if (gridInput[outer][inner] == 1)
-                            {
-                                //Check the co-ord above && to left
-                                if (gridInput[outer - 1][inner] != 1 &&
-                                    gridInput[outer][inner - 1] != 1)
-                                {
-                                    islandCount++;
-                                }
-                            }
-                        }
+                    //All the other co-ordinates that have isEdge as false
 
-                        //If current inner co-ord is greater than above row
-                        if (inner > gridInput[outer - 1].Length - 1)
+                    //Check row length above to cater for jagged arrays
+                    if (!isEdge && inner < gridInput[outer - 1].Length)
+                    {
+                        //Check the co-ord above && to left
+                        if (gridInput[outer][inner] == 1 && 
+                            gridInput[outer - 1][inner] != 1 &&
+                            gridInput[outer][inner - 1] != 1)
                         {
-                            if (gridInput[outer][inner] == 1)
-                            {
-                                //Only Check the co-ord to the left
-                                if (gridInput[outer][inner - 1] != 1)
-                                {
-                                    islandCount++;
-                                }
-                            }
+                            islandCount++;
+                        }
+                    }
+
+                    //If current inner co-ord is greater than above row
+                    if (!isEdge && inner > gridInput[outer - 1].Length - 1)
+                    {
+                        //Only Check the co-ord to the left
+                        if (gridInput[outer][inner] == 1 && gridInput[outer][inner - 1] != 1)
+                        {
+                            islandCount++;
                         }
                     }
                 }
