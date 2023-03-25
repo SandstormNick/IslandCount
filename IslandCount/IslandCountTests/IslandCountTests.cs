@@ -7,7 +7,7 @@ namespace IslandCountTests
         public void Map1_IslandFinder_1Island()
         {
             //All rows are of equal length
-            IslandHelper ih = new IslandHelper();
+            IslandHelper ih = new();
             Assert.Equal(1, ih.IslandFinder(map1));
         }
 
@@ -15,7 +15,7 @@ namespace IslandCountTests
         public void Map2_IslandFinder_3Islands()
         {
             //All rows are of equal length
-            IslandHelper ih = new IslandHelper();
+            IslandHelper ih = new();
             Assert.Equal(3, ih.IslandFinder(map2));
         }
 
@@ -23,7 +23,7 @@ namespace IslandCountTests
         public void MapOuterPerimeter_IslandFinder_3Islands()
         {
             //All rows are of equal length
-            IslandHelper ih = new IslandHelper();
+            IslandHelper ih = new();
             Assert.Equal(1, ih.IslandFinder(mapOuterPerimeter));
         }
 
@@ -55,7 +55,7 @@ namespace IslandCountTests
         public void Map1RowOnly_IslandFinder_2Islands()
         {
             //Testing the logic for the top row
-            IslandHelper ih = new IslandHelper();
+            IslandHelper ih = new();
             Assert.Equal(2, ih.IslandFinder(map1RowOnly));
         }
 
@@ -63,7 +63,7 @@ namespace IslandCountTests
         public void Map1ColumnOnly_IslandFinder_2Islands()
         {
             //Testing the logic for left column
-            IslandHelper ih = new IslandHelper();
+            IslandHelper ih = new();
             Assert.Equal(2, ih.IslandFinder(map1ColumnOnly));
         }
 
@@ -79,7 +79,7 @@ namespace IslandCountTests
         public void MapCheckTopLogic_IslandFinder_3Islands()
         {
             //Testing the logic to check co-ords above
-            IslandHelper ih = new IslandHelper();
+            IslandHelper ih = new();
             Assert.Equal(3, ih.IslandFinder(mapCheckTopLogic));
         }
 
@@ -87,7 +87,7 @@ namespace IslandCountTests
         public void MapJagged1_IslandFinder_4Islands()
         {
             //Testing for Jagged Maps
-            IslandHelper ih = new IslandHelper();
+            IslandHelper ih = new();
             Assert.Equal(4, ih.IslandFinder(mapJagged1));
         }
 
@@ -95,7 +95,7 @@ namespace IslandCountTests
         public void MapJaggedE_IslandFinder_4Islands()
         {
             //Testing for Jagged Maps
-            IslandHelper ih = new IslandHelper();
+            IslandHelper ih = new();
             Assert.Equal(4, ih.IslandFinder(mapJaggedE));
         }
 
@@ -103,7 +103,7 @@ namespace IslandCountTests
         public void MapJaggedPyramid_IslandFinder_4Islands()
         {
             //Testing for Jagged Maps
-            IslandHelper ih = new IslandHelper();
+            IslandHelper ih = new();
             Assert.Equal(6, ih.IslandFinder(mapJaggedPyramid));
         }
 
