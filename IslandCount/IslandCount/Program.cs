@@ -8,6 +8,4 @@ int[][] gridInput = new int[][]
     new int[] { 0,0,0,0,0 }
 };
 
-IslandHelper ih = new();
-
-Console.WriteLine(ih.IslandFinder(gridInput));
+Console.WriteLine(IslandHelper.IslandFinder(gridInput));

@@ -8,7 +8,7 @@ namespace IslandCount
 {
     public class IslandHelper
     {
-        public int IslandFinder(int[][] gridInput)
+        public static int IslandFinder(int[][] gridInput)
         {
             int islandCount = 0;
 

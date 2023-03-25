@@ -7,104 +7,91 @@ namespace IslandCountTests
         public void Map1_IslandFinder_1Island()
         {
             //All rows are of equal length
-            IslandHelper ih = new();
-            Assert.Equal(1, ih.IslandFinder(map1));
+            Assert.Equal(1, IslandHelper.IslandFinder(map1));
         }
 
         [Fact]
         public void Map2_IslandFinder_3Islands()
         {
             //All rows are of equal length
-            IslandHelper ih = new();
-            Assert.Equal(3, ih.IslandFinder(map2));
+            Assert.Equal(3, IslandHelper.IslandFinder(map2));
         }
 
         [Fact]
         public void MapOuterPerimeter_IslandFinder_3Islands()
         {
             //All rows are of equal length
-            IslandHelper ih = new();
-            Assert.Equal(1, ih.IslandFinder(mapOuterPerimeter));
+            Assert.Equal(1, IslandHelper.IslandFinder(mapOuterPerimeter));
         }
 
         [Fact]
         public void MapCircles_IslandFinder_3Islands()
         {
             //All rows are of equal length
-            IslandHelper ih = new();
-            Assert.Equal(2, ih.IslandFinder(mapCircles));
+            Assert.Equal(2, IslandHelper.IslandFinder(mapCircles));
         }
 
         [Fact]
         public void MapOnlyColumns_IslandFinder_3Islands()
         {
             //All rows are of equal length
-            IslandHelper ih = new();
-            Assert.Equal(3, ih.IslandFinder(mapOnlyColumns));
+            Assert.Equal(3, IslandHelper.IslandFinder(mapOnlyColumns));
         }
 
         [Fact]
         public void MapOnlyRows_IslandFinder_3Islands()
         {
             //All rows are of equal length
-            IslandHelper ih = new();
-            Assert.Equal(2, ih.IslandFinder(mapOnlyRows));
+            Assert.Equal(2, IslandHelper.IslandFinder(mapOnlyRows));
         }
 
         [Fact]
         public void Map1RowOnly_IslandFinder_2Islands()
         {
             //Testing the logic for the top row
-            IslandHelper ih = new();
-            Assert.Equal(2, ih.IslandFinder(map1RowOnly));
+            Assert.Equal(2, IslandHelper.IslandFinder(map1RowOnly));
         }
 
         [Fact]
         public void Map1ColumnOnly_IslandFinder_2Islands()
         {
             //Testing the logic for left column
-            IslandHelper ih = new();
-            Assert.Equal(2, ih.IslandFinder(map1ColumnOnly));
+            Assert.Equal(2, IslandHelper.IslandFinder(map1ColumnOnly));
         }
 
         [Fact]
         public void MapCheckLeftLogic_IslandFinder_3Islands()
         {
             //Testing the logic to check co-ords to the left
-            IslandHelper ih = new();
-            Assert.Equal(3, ih.IslandFinder(mapCheckLeftLogic));
+            Assert.Equal(3, IslandHelper.IslandFinder(mapCheckLeftLogic));
         }
 
         [Fact]
         public void MapCheckTopLogic_IslandFinder_3Islands()
         {
             //Testing the logic to check co-ords above
-            IslandHelper ih = new();
-            Assert.Equal(3, ih.IslandFinder(mapCheckTopLogic));
+            Assert.Equal(3, IslandHelper.IslandFinder(mapCheckTopLogic));
         }
 
         [Fact]
         public void MapJagged1_IslandFinder_4Islands()
         {
             //Testing for Jagged Maps
-            IslandHelper ih = new();
-            Assert.Equal(4, ih.IslandFinder(mapJagged1));
+            Assert.Equal(4, IslandHelper.IslandFinder(mapJagged1));
         }
 
         [Fact]
         public void MapJaggedE_IslandFinder_4Islands()
         {
             //Testing for Jagged Maps
-            IslandHelper ih = new();
-            Assert.Equal(4, ih.IslandFinder(mapJaggedE));
+            Assert.Equal(4, IslandHelper.IslandFinder(mapJaggedE));
         }
 
         [Fact]
         public void MapJaggedPyramid_IslandFinder_4Islands()
         {
             //Testing for Jagged Maps
-            IslandHelper ih = new();
-            Assert.Equal(6, ih.IslandFinder(mapJaggedPyramid));
+            Assert.Equal(6, IslandHelper.IslandFinder(mapJaggedPyramid));
         }
 
         #region TestInput
