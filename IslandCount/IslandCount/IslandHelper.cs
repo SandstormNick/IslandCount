@@ -22,39 +22,33 @@ namespace IslandCount
                     {
                         isEdge = true;
                     }
-                    
-                    //deal with co-ordinates on top and left
-                    if (isEdge)
-                    {
-                        //Don't need to check above
-                        if (outer == 0) 
-                        { 
-                            if (gridInput[outer][inner] == 1)
-                            {
-                                //Top left corner
-                                if (inner == 0)
-                                {
-                                    islandCount++;
-                                }
 
-                                //Top left corner has been handled - check previous co-ord to the left
-                                if (inner != 0 && gridInput[outer][inner - 1] != 1)
-                                {
-                                    islandCount++;
-                                }
-                            }
+                    //isEdge flag deals with map points on top and left
+                    //Don't need to check above
+                    if (isEdge && outer == 0)
+                    {
+                        //Top left corner
+                        if (gridInput[outer][inner] == 1 && inner == 0)
+                        {
+                            islandCount++;
                         }
 
-                        //Don't need to check left + ignore the top row (it has been handled)
-                        if (inner == 0 && outer != 0) 
+                        //Top left corner has been handled - check previous co-ord to the left
+                        if (gridInput[outer][inner] == 1 && inner != 0 && gridInput[outer][inner - 1] != 1)
                         {
-                            if (gridInput[outer][inner] == 1)
+                            islandCount++;
+                        }
+                    }
+
+                    //Don't need to check left + ignore the top row (it has been handled)
+                    if (isEdge && inner == 0 && outer != 0)
+                    {
+                        if (gridInput[outer][inner] == 1)
+                        {
+                            //check previous co-ord above
+                            if (gridInput[outer - 1][inner] != 1)
                             {
-                                //check previous co-ord above
-                                if (gridInput[outer - 1][inner] != 1)
-                                {
-                                    islandCount++;
-                                }
+                                islandCount++;
                             }
                         }
                     }
