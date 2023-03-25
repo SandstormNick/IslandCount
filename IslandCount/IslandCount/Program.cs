@@ -1,4 +1,6 @@
-﻿int[][] gridInput = new int[][]
+﻿using IslandCount;
+
+int[][] gridInput = new int[][]
 {
     new int[] { 0,0,0,1,1 },
     new int[] { 0,0,0,1,1 },
@@ -6,8 +8,6 @@
     new int[] { 0,0,0,0,0 }
 };
 
+IslandHelper ih = new IslandHelper();
 
-foreach (int row in gridInput[0])
-{
-    Console.WriteLine(row);
-}
+Console.WriteLine(ih.IslandFinder(gridInput));
