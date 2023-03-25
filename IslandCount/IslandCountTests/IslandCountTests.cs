@@ -20,6 +20,38 @@ namespace IslandCountTests
         }
 
         [Fact]
+        public void MapOuterPerimeter_IslandFinder_3Islands()
+        {
+            //All rows are of equal length
+            IslandHelper ih = new IslandHelper();
+            Assert.Equal(1, ih.IslandFinder(mapOuterPerimeter));
+        }
+
+        [Fact]
+        public void MapCircles_IslandFinder_3Islands()
+        {
+            //All rows are of equal length
+            IslandHelper ih = new();
+            Assert.Equal(2, ih.IslandFinder(mapCircles));
+        }
+
+        [Fact]
+        public void MapOnlyColumns_IslandFinder_3Islands()
+        {
+            //All rows are of equal length
+            IslandHelper ih = new();
+            Assert.Equal(3, ih.IslandFinder(mapOnlyColumns));
+        }
+
+        [Fact]
+        public void MapOnlyRows_IslandFinder_3Islands()
+        {
+            //All rows are of equal length
+            IslandHelper ih = new();
+            Assert.Equal(2, ih.IslandFinder(mapOnlyRows));
+        }
+
+        [Fact]
         public void Map1RowOnly_IslandFinder_2Islands()
         {
             //Testing the logic for the top row
@@ -39,7 +71,7 @@ namespace IslandCountTests
         public void MapCheckLeftLogic_IslandFinder_3Islands()
         {
             //Testing the logic to check co-ords to the left
-            IslandHelper ih = new IslandHelper();
+            IslandHelper ih = new();
             Assert.Equal(3, ih.IslandFinder(mapCheckLeftLogic));
         }
 
@@ -90,6 +122,41 @@ namespace IslandCountTests
             new int[] { 0,0,0,1,1 },
             new int[] { 0,0,1,0,0 },
             new int[] { 1,1,0,0,0 }
+        };
+
+        static readonly int[][] mapOuterPerimeter = new int[][]
+        {
+            new int[] { 1,1,1,1,1 },
+            new int[] { 1,0,0,0,1 },
+            new int[] { 1,0,0,0,1 },
+            new int[] { 1,1,1,1,1 }
+        };
+
+        static readonly int[][] mapCircles = new int[][]
+        {
+            new int[] { 1,1,1,1,1,1,1 },
+            new int[] { 1,0,0,0,0,0,1 },
+            new int[] { 1,0,1,1,1,0,1 },
+            new int[] { 1,0,1,0,1,0,1 },
+            new int[] { 1,0,1,1,1,0,1 },
+            new int[] { 1,0,0,0,0,0,1 },
+            new int[] { 1,1,1,1,1,1,1 }
+        };
+
+        static readonly int[][] mapOnlyColumns = new int[][]
+        {
+            new int[] { 1,0,1,0,1 },
+            new int[] { 1,0,1,0,1 },
+            new int[] { 1,0,1,0,1 },
+            new int[] { 1,0,1,0,1 }
+        };
+
+        static readonly int[][] mapOnlyRows = new int[][]
+        {
+            new int[] { 1,1,1,1,1 },
+            new int[] { 0,0,0,0,0 },
+            new int[] { 1,1,1,1,1 },
+            new int[] { 0,0,0,0,0 }
         };
 
         static readonly int[][] map1RowOnly = new int[][]
